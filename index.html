@@ -8,6 +8,13 @@
     <!--<link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap" rel="stylesheet">-->
     <link rel="stylesheet" href="screen.css" />
     <!--<script src="js/modernizr.js"></script>-->
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+    </style>
   </head>
   <body>
     <header id="header">
@@ -36,11 +43,29 @@
       <p>
         708-447-3266
       </p>
+
+      <div id="map"></div>
     </aside>
     <footer id="footer">
       <p>
         Copyright &copy; 2020
       </p>
     </footer>
+
+    <script>
+    // Initialize and add the map
+    function initMap() {
+      // The location of Uluru
+      var uluru = {lat: -25.344, lng: 131.036};
+      // The map, centered at Uluru
+      var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 4, center: uluru});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: uluru, map: map});
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwSDQISVh7EAd40bUm894viODS9tgPdY8&callback=initMap">
+    </script>
   </body>
 </html>
