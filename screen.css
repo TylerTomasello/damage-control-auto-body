@@ -240,6 +240,12 @@ img, video, a {
   text-align:left;
 }
 
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+
 .btn {
   background-color:white;
   border-radius: 8px;
